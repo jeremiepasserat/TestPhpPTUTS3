@@ -1,7 +1,6 @@
 <?php
 require 'conn.php';
-$arret = $_POST['arret'];
-$mysql_qry = "select NUM AS ligne from LIGNE WHERE ARRET1 LIKE '$arret' OR ARRET2 LIKE '$arret' OR ARRET3 LIKE '$arret' OR ARRET4 LIKE '$arret' OR ARRET5 LIKE '$arret' OR ARRET6 LIKE '$arret'" ;
+$mysql_qry = "select NUM from LIGNE";
 $result = mysqli_query($conn, $mysql_qry);
 if (!$result)
 {
@@ -13,8 +12,8 @@ else
     {
         while ($row = mysqli_fetch_assoc($result))
         {
-            $row = $row[ligne];
-            echo $row, PHP_EOL;
+            #$row = $row[arret];
+            echo $row['NUM'], PHP_EOL;
         }
     }
 }

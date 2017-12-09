@@ -1,6 +1,6 @@
 <?php
 require 'conn.php';
-$mysql_qry = "select NOM_ARRET AS arret from ARRET";
+$mysql_qry = "select NOM_ARRET, IS_ACCESSIBLE from ARRET";
 $result = mysqli_query($conn, $mysql_qry);
 if (!$result)
 {
@@ -12,8 +12,8 @@ else
 {
     while ($row = mysqli_fetch_assoc($result))
     {
-        $row = $row[arret];
-        echo $row, PHP_EOL;
+        #$row = $row[arret];
+        echo $row['IS_ACCESSIBLE'], $row['NOM_ARRET'], PHP_EOL;
     }
 }
 }

@@ -12,8 +12,10 @@ else
     {
         while ($row = mysqli_fetch_assoc($result))
         {
-            $list = array($row['HORAIRE_ARR1'], $row['HORAIRE_ARR2'], $row['HORAIRE_ARR3'], $row['HORAIRE_ARR4'], $row['HORAIRE_ARR5'], $row['HORAIRE_ARR6']);
-            print_r($list);
+            #$list = array($row['HORAIRE_ARR1'], $row['HORAIRE_ARR2'], $row['HORAIRE_ARR3'], $row['HORAIRE_ARR4'], $row['HORAIRE_ARR5'], $row['HORAIRE_ARR6']);
+            #print_r($list);
+            echo $row['HORAIRE_ARR1'], ' ', $row['HORAIRE_ARR2'], ' ',$row['HORAIRE_ARR3'], ' ', $row['HORAIRE_ARR4'], ' ',$row['HORAIRE_ARR5'], ' ',$row['HORAIRE_ARR6'];
+            echo '</br>';
         }
     }
 }
